@@ -1,0 +1,60 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
+<head>
+    {% block head %}
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+        <link href='/static/css/normalize.css' rel='stylesheet' type='text/css'>
+        <link href='/static/css/styles.css' rel='stylesheet' type='text/css'>
+
+        {% block css %}{% endblock %}
+
+        <link href='http://fonts.googleapis.com/css?family=Kreon' rel='stylesheet' type='text/css'>
+
+        <link rel="shortcut icon" href="{{ url_for('static', filename='img/favicon.ico') }}" type="image/png" />
+
+        <meta property="og:image" content="http://outback-min.herokuapp.com/static/img/fichaponto.png"/>
+        <meta property="og:description" content="Outback Min é um preenchedor automático da pesquisa de satisfação do outback. Com ele você recebe o resultado final sem esforço."/>
+
+        {% block js_cima %}{% endblock %}
+        <title>{% block title %}{% endblock %}</title>
+
+    {% endblock %}
+
+</head>
+<body itemscope itemtype="http://schema.org/WebPage">
+
+    <section class="container">
+        <section id="content" class="content">
+            <header>
+                <div id="div-logo" class="div-logo">
+                    <h1 class="logo" itemprop="name"><a href="/" id="logo-link" >Ficha Ponto</a></h1>
+                </div>
+
+                <span class="slogan-box">
+                    <span class="slogan">Controle o seu horário por email!</span>
+                </span>
+            </header>
+            {% block content %}{% endblock %}
+
+        </section>
+        <footer>
+
+            {% block footer %}
+                <p>Qualquer sugestão ou dúvida mande email para <a id="envie-email-para" href="mailto:ficha.ponto.contato@gmail.com">ficha.ponto.contato@gmail.com</a></p>
+                <span itemprop="author" itemscope itemtype="http://schema.org/Corporation">
+                    <meta itemprop="name" content="Ficha Ponto" />
+               </span>
+            {% endblock %}
+
+        </footer>
+    </section>
+
+    <script type="text/javascript" src="/static/js/jquery-1.9.1.min.js"></script>
+
+    {% if debug == False %}
+        <script type="text/javascript" src="/static/js/google_analytics.js"></script>
+    {% endif %}
+
+    {% block js %}{% endblock %}
+</body>

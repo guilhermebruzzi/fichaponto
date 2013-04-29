@@ -1,0 +1,58 @@
+{% extends "master.html" %}
+
+{% block title %}Ficha Ponto - Controle o seu horário por email!{% endblock %}
+
+{% block css %}<link href="{{ url_for('static', filename='css/index.css') }}" rel="stylesheet" type="text/css" xmlns="http://www.w3.org/1999/html">{% endblock %}
+
+{% block content %}
+    <section class="corpo-cadastro">
+        {% if user %}
+            <h2>
+                <p>Obrigado por se inscrever no Ficha Ponto! :)</p>
+                <p>Foi enviado para o seu email {{ user.email }} instruções para o que fazer a seguir.</p>
+                <p>E se gostou da ideia, compartilhe nas redes:</p>
+                <p>
+                    <!-- AddThis Button BEGIN -->
+                    <div class="addthis_toolbox addthis_default_style ">
+                        <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+                        <a class="addthis_button_tweet"></a>
+                        <a class="addthis_button_pinterest_pinit"></a>
+                        <a class="addthis_counter addthis_pill_style"></a>
+                    </div>
+                    <script type="text/javascript">var addthis_config = {"data_track_addressbar":true};</script>
+                    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-517eac40187f2e96"></script>
+                    <!-- AddThis Button END -->
+                </p>
+            </h2>
+        {% else %}
+            <h2>
+                <p>Imagine se você pudesse saber o tempo que você e os colaboradores da sua empresa gastaram com cada tarefa de uma forma fácil.</p>
+                <p>Imaginou? Pois é, o ficha ponto lhe entrega estatísticas avançadas, baseadas em emails que você mandou falando quais tarefas fez no dia e quantas horas gastou em cada uma.</p>
+                <form id="fichaponto-form" class="fichaponto-form" action="" method="post">
+
+                    <fieldset>
+                        <legend>Cadastre-se e saiba mais como usar esse produto!</legend>
+                        <span id="erro" class="error hidden">Por favor, preencha corretamente os valores dos campos abaixo.</span>
+                        <p>
+                            <label for="empresa">Empresa:</label>
+                            <input type="text" id="empresa" class="empresa" name="empresa">
+                        </p>
+
+                        <p>
+                            <label for="email">Email:</label>
+                            <input type="text" id="email" class="email" name="email">
+                        </p>
+
+                        <p>
+                            <input type="submit" id="enviar" class="enviar" value="Enviar">
+                        </p>
+                    </fieldset>
+                </form>
+                <p class="font-bigger">Exemplo:</p>
+                <p><img src="{{ url_for('static', filename='img/exemplo-fichaponto.jpg') }}" class="email-exemplo" alt="email exemplo" title="email exemplo"></p>
+            </h2>
+        {% endif %}
+    </section>
+{% endblock %}
+
+{% block js %}<script type="text/javascript" src="{{ url_for('static', filename='js/index.js') }}"></script>{% endblock %}

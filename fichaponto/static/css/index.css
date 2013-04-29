@@ -1,0 +1,33 @@
+.email, .empresa{
+    width: 67%;
+}
+
+.email{
+    margin-left: 26px;
+}
+
+.enviar{
+    margin-left: 10px;
+}
+
+.corpo-cadastro p{
+    font-family: "Helvetica Neue";
+    font-size: 16px;
+    margin: 20px;
+}
+
+.email-exemplo{
+    width: 453px;
+    margin: 0px auto;
+    display: block;
+}
+
+
+.fichaponto-form{
+    margin: 0px auto;
+    width: 500px;
+}
+
+.addthis_toolbox {
+    margin-left: 16px;
+}
