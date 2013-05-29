@@ -9,8 +9,6 @@ html, body{
     position: relative;
     margin: 0 auto;
     padding: 0;
-    /*width: 1131px;*/
-    /*background: url('/static/img/fundo-prancheta.png') no-repeat top left scroll transparent;*/
 }
 
 .content {
@@ -35,9 +33,9 @@ html, body{
 
 .logo a{
     display: block;
-    background: url('/static/img/fichaponto.png') no-repeat top left scroll transparent;
-    width: 600px;
-    height: 250px;
+    background: url('/static/img/logofichaponto.gif') no-repeat top left scroll transparent;
+    width: 162px;
+    height: 170px;
     margin: 0px auto;
 }
 
